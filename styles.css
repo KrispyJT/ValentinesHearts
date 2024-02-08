@@ -1,6 +1,18 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ffe6e6; /* Light pink background */
+  color: #333; /* Dark gray text */
+}
+
 .container {
   text-align: center;
   margin-top: 100px;
+}
+
+h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #cc0066; /* Dark pink heading */
 }
 
 .buttons {
@@ -10,8 +22,17 @@
 button {
   margin: 0 10px;
   padding: 10px 20px;
-  font-size: 16px;
+  font-size: 18px;
   cursor: pointer;
+  background-color: #ff9999; /* Light red button background */
+  border: none;
+  border-radius: 5px;
+  color: #fff; /* White text */
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: #ff6666; /* Darker red button background on hover */
 }
 
 #message {
