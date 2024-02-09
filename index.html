@@ -29,6 +29,11 @@
     let sizeMultiplier = 1; // Initial size multiplier
     const button = document.getElementById('resizeButton');
 
+    // Add event listener to call resizeButton function when button is clicked
+    button.addEventListener('click', function() {
+      resizeButton();
+    });
+
     function resizeButton() {
       sizeMultiplier += 0.1; // Increase size multiplier by 0.1 each time
       button.style.transform = `scale(${sizeMultiplier})`; // Apply scale transformation
