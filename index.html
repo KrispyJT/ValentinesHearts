@@ -5,17 +5,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Will You Be My Valentine?</title>
   <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Add CSS style for the button */
+    #resizeButton {
+      padding: 10px 20px;
+      font-size: 16px;
+      transition: all 0.3s ease;
+    }
+  </style>
 </head>
 <body>
   <div class="container">
     <h1>Will You Be My Valentine?</h1>
     <div class="buttons">
-      <button id="yesButton">Yes</button>
-      <button id="noButton">No</button>
+      <!-- Add the button with an ID for JavaScript -->
+      <button id="resizeButton">Click Me</button>
     </div>
     <div id="message"></div>
     <div id="animation"></div>
   </div>
-  <script src="script.js"></script>
+  <script>
+    // JavaScript code for the button size multiplier
+    let sizeMultiplier = 1; // Initial size multiplier
+    const button = document.getElementById('resizeButton');
+
+    function resizeButton() {
+      sizeMultiplier += 0.1; // Increase size multiplier by 0.1 each time
+      button.style.transform = `scale(${sizeMultiplier})`; // Apply scale transformation
+    }
+  </script>
+  <script src="script.js"></script> <!-- Your existing script -->
 </body>
 </html>
