@@ -6,8 +6,13 @@
   <title>Will You Be My Valentine?</title>
   <link rel="stylesheet" href="styles.css">
   <style>
-    /* Add CSS style for the button */
-    #resizeButton {
+    /* Add CSS style for the buttons */
+    .buttons {
+      display: flex;
+      justify-content: center;
+    }
+    .button {
+      margin: 0 10px;
       padding: 10px 20px;
       font-size: 16px;
       transition: all 0.3s ease;
@@ -18,25 +23,38 @@
   <div class="container">
     <h1>Will You Be My Valentine?</h1>
     <div class="buttons">
-      <!-- Add the button with an ID for JavaScript -->
-      <button id="resizeButton">Click Me</button>
+      <!-- Add the "Yes" and "No" buttons with IDs for JavaScript -->
+      <button id="yesButton" class="button">Yes</button>
+      <button id="noButton" class="button">No</button>
     </div>
     <div id="message"></div>
     <div id="animation"></div>
   </div>
   <script>
     // JavaScript code for the button size multiplier
-    let sizeMultiplier = 1; // Initial size multiplier
-    const button = document.getElementById('resizeButton');
+    let sizeMultiplierYes = 1; // Initial size multiplier for Yes button
+    let sizeMultiplierNo = 1; // Initial size multiplier for No button
+    const yesButton = document.getElementById('yesButton');
+    const noButton = document.getElementById('noButton');
 
-    // Add event listener to call resizeButton function when button is clicked
-    button.addEventListener('click', function() {
-      resizeButton();
+    // Add event listener to call resizeButton function when Yes button is clicked
+    yesButton.addEventListener('click', function() {
+      resizeYesButton();
     });
 
-    function resizeButton() {
-      sizeMultiplier += 0.1; // Increase size multiplier by 0.1 each time
-      button.style.transform = `scale(${sizeMultiplier})`; // Apply scale transformation
+    // Add event listener to call resizeButton function when No button is clicked
+    noButton.addEventListener('click', function() {
+      resizeNoButton();
+    });
+
+    function resizeYesButton() {
+      sizeMultiplierYes += 0.2; // Increase size multiplier for Yes button by 0.2 each time
+      yesButton.style.fontSize = `${16 + sizeMultiplierYes * 2}px`; // Apply font size increase
+    }
+
+    function resizeNoButton() {
+      sizeMultiplierNo -= 0.1; // Decrease size multiplier for No button by 0.1 each time
+      noButton.style.fontSize = `${16 - sizeMultiplierNo * 2}px`; // Apply font size decrease
     }
   </script>
   <script src="script.js"></script> <!-- Your existing script -->
